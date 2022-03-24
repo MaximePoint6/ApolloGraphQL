@@ -35,9 +35,11 @@ struct Launches: Decodable {
 
         struct Mission: Decodable {
             var name: String
+            var missionPatch: String
 
             init(_ mission: LaunchData.Launch.Mission?) {
                 self.name = mission?.name ?? ""
+                self.missionPatch = mission?.missionPatch ?? ""
             }
         }
 

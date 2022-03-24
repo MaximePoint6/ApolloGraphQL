@@ -16,18 +16,27 @@ struct ContentView: View {
             List {
                 ForEach(launchViewModel.launches) { launch in
                     NavigationLink(destination: LaunchCardView(launch: launch)) {
-                        Text(launch.mission.name)
+                        HStack {
+                            AsyncImage(url: URL(string: launch.mission.missionPatch)){ image in
+                                image.resizable()
+                            } placeholder: {
+                                Color.gray
+                            }
+                            .frame(width: 30, height: 30)
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                            Text(launch.mission.name)
+                        }
                     }
                 }
+                .navigationTitle("SpaceX missions")
             }
-            .navigationTitle("SpaceX rockets")
         }
     }
 }
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-            .environmentObject(LaunchViewModel())
+    
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+                .environmentObject(LaunchViewModel())
+        }
     }
-}

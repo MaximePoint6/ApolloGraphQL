@@ -2,7 +2,8 @@
   "id": "109",
   "site": "CCAFS SLC 40",
   "mission": {
-    "name": "Starlink-15 (v1.0)"
+    "name": "Starlink-15 (v1.0)",
+    "missionPatch": "https://images2.imgbox.com/9a/96/nLppz9HW_o.png"
   },
   "rocket": {
     "id": "falcon9",
