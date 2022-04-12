@@ -26,7 +26,7 @@ struct LaunchCardView: View {
             Rectangle()
                 .frame(height: 10)
                 .foregroundColor(.clear)
-            Text(launch.isBooked ? "Full" : "Places are still available")
+            Text(launch.isBooked ? "Cancel Trip" : "Book now")
                 .fontWeight(.bold)
             Rectangle()
                 .frame(height: 10)
